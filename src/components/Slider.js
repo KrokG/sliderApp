@@ -7,12 +7,12 @@ class Slider extends React.Component {
 		const dispatch = this.props.dispatch;
 		const index = this.props.indexImg;
 		const src = this.props.slides[index];
-		const Img = () => (<img src={src} alt='' />);
+		const Img = () => (<img className='slide__img' src={src} alt='' />);
 		return (
-			<div>
+			<div className='win-slider__slider'>
 				<button onClick={() => { (dispatch(slideBack(this.props))) }}>back</button>
-				<div>
-					<Img />
+				<div className='slider__slide'>
+					<Img/>
 				</div>
 				<button onClick={() => { (dispatch(slideNext(this.props))) }}>next</button>
 			</div>

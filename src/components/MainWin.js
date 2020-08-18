@@ -7,12 +7,12 @@ class MainWin extends React.Component{
 	render(){
 		const dispatch = this.props.dispatch;
 		return(
-			<div>
-				<h1>Welcome to page</h1>
+			<div className='app__main-win'>
+				<div className='main-win__text'>Welcome to page</div>
 				<Link to='/slider'
 				 onClick={
 					() => {(dispatch(setSliderWin()))}
-				}>Slider</Link>
+				}><div className='main-win__button'>Slider</div></Link>
 			</div>)
 	}
 }
@@ -26,6 +26,5 @@ const mapStateToProps = (state)=> {
 };
 
 const WrappedMainWin = connect(mapStateToProps)(MainWin);
-
 
 export default WrappedMainWin;

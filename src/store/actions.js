@@ -5,7 +5,6 @@ export const SLIDE_NEXT = 'SLIDE_NEXT'
 export const CHANGE_MODE = 'CHANGE_MODE'
 
 export const setMainWin = () => {
-  console.log('setMainWin');
   return {
     type: SET_MODE_MAIN_WIN,
     win: 'MainWin',
@@ -13,7 +12,6 @@ export const setMainWin = () => {
 }
 
 export const setSliderWin = () => {
-  console.log('setSliderWin');
   return {
     type: SET_MODE_SLIDER_WIN,
     win: 'SliderWin',
@@ -21,7 +19,6 @@ export const setSliderWin = () => {
 }
 
 export const slideBack = (state) => {
-  console.log('SlideBack');
   let sizeArrayOfImg = state.slides.length
   let index = state.indexImg
   index--;
@@ -33,7 +30,6 @@ export const slideBack = (state) => {
 }
 
 export const slideNext = (state) => {
-  console.log('SlideNext');
   let sizeArrayOfImg = state.slides.length
   let index = state.indexImg
   index++;
@@ -45,7 +41,6 @@ export const slideNext = (state) => {
 }
 
 export const changeMode = (state) =>{
-  console.log('changeMode');
   let mode = state.mode === 'local' ? 'server': 'local';
   let surce = mode === 'local' ? state.localImg: state.serverImg;
   return {

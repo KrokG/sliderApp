@@ -8,7 +8,6 @@ import {
 	CHANGE_MODE
 } from './actions'
 
-
 const rootReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case SET_MODE_MAIN_WIN:
