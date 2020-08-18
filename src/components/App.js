@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import MainWin from './MainWin'
 import SliderWin from './SliderWin'
 
-const App = (state)=> {
+const App = ()=> {
 	return(
 		<div>
 			<Switch>
@@ -13,4 +13,5 @@ const App = (state)=> {
 		</div>
 	)
 }
+
 export default App;

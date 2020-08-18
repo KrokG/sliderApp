@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom'
 import {BrowserRouter} from 'react-router-dom'
 import { connect, Provider } from 'react-redux'
 import {store} from './store/store'
-//import {setMainWin} from './store/actions'
-
 
 import App from './components/App'
 
@@ -25,6 +23,7 @@ const mapStateToProps = (state)=> {
     win: state.win,
     indexImg: state.indexImg,
     slides: state.slides,
+    mode: state.mode,
 	};
 };
 

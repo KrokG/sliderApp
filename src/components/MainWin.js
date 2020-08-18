@@ -1,17 +1,31 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import {store} from '../store/store'
-import {setSliderWin} from '../store/actions'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import {setSliderWin} from '../store/actions';
+import {connect} from 'react-redux';
 
-const MainWin = (dispatch) => {
-	return(
-	<div>
-		<h1>Welcome to page</h1>
-		<Link to='/slider'
-		 onClick={
-			() => {(store.dispatch(setSliderWin()))}
-		}>Slider</Link>
-	</div>
-)};
+class MainWin extends React.Component{
+	render(){
+		const dispatch = this.props.dispatch;
+		return(
+			<div>
+				<h1>Welcome to page</h1>
+				<Link to='/slider'
+				 onClick={
+					() => {(dispatch(setSliderWin()))}
+				}>Slider</Link>
+			</div>)
+	}
+}
 
-export default MainWin;
+const mapStateToProps = (state)=> {
+	return {
+		win: state.win,
+		indexImg: state.indexImg,
+		slides: state.slides,
+	};
+};
+
+const WrappedMainWin = connect(mapStateToProps)(MainWin);
+
+
+export default WrappedMainWin;
