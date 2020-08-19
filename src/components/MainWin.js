@@ -2,29 +2,32 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {setSliderWin} from '../store/actions';
 import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux'
 
 class MainWin extends React.Component{
 	render(){
-		const dispatch = this.props.dispatch;
+		const {setSliderWin} = this.props;
 		return(
 			<div className='app__main-win'>
 				<div className='main-win__text'>Welcome to page</div>
 				<Link to='/slider'
-				 onClick={
-					() => {(dispatch(setSliderWin()))}
-				}><div className='main-win__button'>Slider</div></Link>
+				 onClick={() => (setSliderWin())}><div className='main-win__button'>Slider</div></Link>
 			</div>)
 	}
 }
 
-const mapStateToProps = (state)=> {
+const mapStateToProps = (state) => {
 	return {
 		win: state.win,
-		indexImg: state.indexImg,
-		slides: state.slides,
 	};
 };
 
-const WrappedMainWin = connect(mapStateToProps)(MainWin);
+const mapActionToProps = (dispatch) => {
+	return{
+		setSliderWin: bindActionCreators(setSliderWin,dispatch)
+	};
+};
+
+const WrappedMainWin = connect(mapStateToProps, mapActionToProps)(MainWin);
 
 export default WrappedMainWin;

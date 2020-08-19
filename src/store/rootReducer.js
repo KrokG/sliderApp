@@ -1,4 +1,4 @@
-import {initialState} from './initialState'
+import { initialState } from './initialState'
 
 import {
 	SET_MODE_MAIN_WIN,
@@ -6,7 +6,7 @@ import {
 	SLIDE_BACK,
 	SLIDE_NEXT,
 	CHANGE_MODE
-} from './actions'
+} from './actionTypes'
 
 const rootReducer = (state = initialState, action) => {
 	switch (action.type) {
@@ -19,7 +19,7 @@ const rootReducer = (state = initialState, action) => {
 		case SLIDE_NEXT:
 			return { ...state, indexImg: action.payload }
 		case CHANGE_MODE:
-			return { ...state, mode: action.payload , slides: action.surce, indexImg: 0}
+			return { ...state, mode: action.payload, slides: action.surce, indexImg: action.indexImg }
 		default: return state;
 	}
 }

@@ -50,14 +50,14 @@
 	justify-content: space-between;
 }
 .slider__slide{
-	width: 400px;
+	width: 420px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 .slide__img{
-	max-width: 400px;
+	max-width: 420px;
 	max-height: 300px;
 }
 
@@ -83,7 +83,7 @@
 	width: 100px;
 	background: #335;
 	border-radius: 3px;
-	margin: 0px 10px;
+	margin: auto;
 	margin-top: 20px;
 }
 

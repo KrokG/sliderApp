@@ -1,0 +1,5 @@
+export const SET_MODE_MAIN_WIN = 'SET_MODE_MAIN_WIN';
+export const SET_MODE_SLIDER_WIN = 'SET_MODE_SLIDER_WIN';
+export const SLIDE_BACK = 'SLIDE_BACK'
+export const SLIDE_NEXT = 'SLIDE_NEXT'
+export const CHANGE_MODE = 'CHANGE_MODE'
